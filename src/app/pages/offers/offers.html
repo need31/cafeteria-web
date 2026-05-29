@@ -1,0 +1,121 @@
+<div class="container py-5">
+
+    <!-- TITULO -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+
+            Ofertas Especiales 
+
+        </h1>
+
+        <p class="text-muted">
+
+            Disfruta nuestros productos con descuentos exclusivos
+
+        </p>
+
+    </div>
+
+    <!-- OFERTAS -->
+
+    <div class="row g-4">
+
+        <div
+            class="col-md-6 col-lg-4"
+            *ngFor="let producto of ofertas"
+        >
+
+            <div class="card border-0 shadow h-100 rounded-4 overflow-hidden">
+
+                <!-- IMAGEN -->
+
+                <img
+                    [src]="producto.imagen"
+                    class="card-img-top"
+                    height="250"
+                    style="object-fit: cover;"
+                >
+
+                <!-- BODY -->
+
+                <div class="card-body">
+
+                    <!-- CATEGORIA -->
+
+                    <span class="badge bg-warning text-dark mb-3">
+
+                        {{producto.categoria}}
+
+                    </span>
+
+                    <!-- NOMBRE -->
+
+                    <h3 class="fw-bold">
+
+                        {{producto.nombre}}
+
+                    </h3>
+
+                    <!-- PRECIO ANTES -->
+
+                    <p
+                        class="text-decoration-line-through text-muted mb-1"
+                    >
+
+                        Antes:
+
+                        {{producto.precio | currency:'S/ '}}
+
+                    </p>
+
+                    <!-- PRECIO NUEVO -->
+
+                    <h4 class="text-danger fw-bold">
+
+                        Ahora:
+
+                        {{producto.nuevoPrecio | currency:'S/ '}}
+
+                    </h4>
+
+                    <!-- DESCUENTO -->
+
+                    <p class="text-success fw-bold">
+
+                        20% de descuento
+
+                    </p>
+
+                    <!-- STOCK -->
+
+                    <p>
+
+                        Stock disponible:
+
+                        <strong>
+
+                            {{producto.stock}}
+
+                        </strong>
+
+                    </p>
+
+                    <!-- BOTON -->
+
+                    <button class="btn btn-dark w-100">
+
+                        Comprar oferta
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

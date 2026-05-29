@@ -1,0 +1,266 @@
+<div class="container py-5">
+
+    <!-- TITULO -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+
+            Contáctanos 
+
+        </h1>
+
+        <p class="text-muted fs-5">
+
+            Estamos felices de atenderte en Cafe Aroma
+
+        </p>
+
+    </div>
+
+    <div class="row g-5">
+
+        <!-- INFORMACION -->
+
+        <div class="col-lg-5">
+
+            <div class="card border-0 shadow rounded-4 h-100">
+
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-4">
+
+                        Información de contacto
+
+                    </h3>
+
+                    <!-- TELEFONO -->
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+
+                             Teléfono
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            (01) 456-7890
+
+                        </p>
+
+                    </div>
+
+                    <!-- CELULAR -->
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+
+                             Celular
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            987 654 321
+
+                        </p>
+
+                    </div>
+
+                    <!-- CORREO -->
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+
+                             Correo
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            contacto@cafearoma.com
+
+                        </p>
+
+                    </div>
+
+                    <!-- DIRECCION -->
+
+                    <div class="mb-4">
+
+                        <h5 class="fw-bold">
+
+                             Dirección
+
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Av. Principal 123 - Lima, Perú
+
+                        </p>
+
+                    </div>
+
+                    <!-- REDES -->
+
+                    <div>
+
+                        <h5 class="fw-bold mb-3">
+
+                             Redes sociales
+
+                        </h5>
+
+                        <div class="d-flex gap-3">
+
+                            <button class="btn btn-dark">
+
+                                Facebook
+
+                            </button>
+
+                            <button class="btn btn-danger">
+
+                                Instagram
+
+                            </button>
+
+                            <button class="btn btn-primary">
+
+                                TikTok
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FORMULARIO -->
+
+        <div class="col-lg-7">
+
+            <div class="card border-0 shadow rounded-4">
+
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-4">
+
+                        Envíanos un mensaje
+
+                    </h3>
+
+                    <form (ngSubmit)="enviarFormulario()">
+
+                        <!-- NOMBRE -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Nombre completo
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                [(ngModel)]="nombre"
+                                name="nombre"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- CORREO -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Correo electrónico
+
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                [(ngModel)]="correo"
+                                name="correo"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- ASUNTO -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-bold">
+
+                                Asunto
+
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                [(ngModel)]="asunto"
+                                name="asunto"
+                                required
+                            >
+
+                        </div>
+
+                        <!-- MENSAJE -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-bold">
+
+                                Mensaje
+
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                rows="5"
+                                [(ngModel)]="mensaje"
+                                name="mensaje"
+                                required
+                            ></textarea>
+
+                        </div>
+
+                        <!-- BOTON -->
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark w-100 py-3 fw-bold"
+                        >
+
+                            Enviar mensaje
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

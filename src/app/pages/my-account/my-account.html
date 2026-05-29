@@ -1,0 +1,82 @@
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6">
+
+            <div class="card border-0 shadow-lg rounded-4 p-5 text-center">
+
+                <!-- ICONO -->
+
+                <div class="display-1 mb-3">
+
+                    
+
+                </div>
+
+                <!-- NOMBRE -->
+
+                <h2 class="fw-bold">
+
+                    {{usuario.nombre}}
+
+                </h2>
+
+                <!-- CORREO -->
+
+                <p class="text-muted fs-5">
+
+                    {{usuario.correo}}
+
+                </p>
+
+                <!-- BADGE -->
+
+                <span class="badge bg-success px-4 py-2 mb-4">
+
+                    Sesión activa
+
+                </span>
+
+                <!-- INFORMACION -->
+
+                <div class="text-start mt-4">
+
+                    <p>
+
+                         Cliente Cafe Aroma
+
+                    </p>
+
+                    <p>
+
+                         Lima - Perú
+
+                    </p>
+
+                    <p>
+
+                         Usuario registrado
+
+                    </p>
+
+                </div>
+
+                <!-- BOTON -->
+
+                <button
+                    class="btn btn-dark w-100 mt-4"
+                    (click)="cerrarSesion()"
+                >
+
+                    Cerrar sesión
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

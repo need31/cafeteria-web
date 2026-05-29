@@ -1,0 +1,93 @@
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-5">
+
+            <div class="card border-0 shadow-lg rounded-4 p-5">
+
+                <!-- TITULO -->
+
+                <div class="text-center mb-4">
+
+                    <h1 class="fw-bold">
+
+                        Iniciar Sesión
+
+                    </h1>
+
+                    <p class="text-muted">
+
+                        Cafe Aroma 
+
+                    </p>
+
+                </div>
+
+                <!-- FORMULARIO -->
+
+                <form (ngSubmit)="login()">
+
+                    <!-- CORREO -->
+
+                    <div class="mb-3">
+
+                        <label class="form-label fw-bold">
+
+                            Correo
+
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            [(ngModel)]="correo"
+                            name="correo"
+                            placeholder="Ingrese su correo"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="mb-4">
+
+                        <label class="form-label fw-bold">
+
+                            Contraseña
+
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control"
+                            [(ngModel)]="password"
+                            name="password"
+                            placeholder="Ingrese su contraseña"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- BOTON -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-dark w-100 py-2 fw-bold"
+                    >
+
+                        Ingresar
+
+                    </button>
+
+                </form>
+                        
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

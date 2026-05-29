@@ -1,0 +1,317 @@
+<div class="container py-5">
+
+    <!-- TITULO -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+
+            Dashboard Administrativo 
+
+        </h1>
+
+        <p class="text-muted">
+
+            Panel privado Cafe Aroma
+
+        </p>
+
+    </div>
+
+    <!-- BIENVENIDA -->
+
+    <div class="alert alert-dark rounded-4 shadow-sm mb-4">
+
+        Bienvenido:
+
+        <strong>
+
+            {{usuario.nombre}}
+
+        </strong>
+
+    </div>
+
+    <!-- INFORMACION USUARIO -->
+
+    <div class="card shadow border-0 rounded-4 mb-5">
+
+        <div class="card-body">
+
+            <h3 class="fw-bold mb-4">
+
+                Información del trabajador
+
+            </h3>
+
+            <p>
+
+                 Nombre:
+
+                <strong>
+
+                    {{usuario.nombre}}
+
+                </strong>
+
+            </p>
+
+            <p>
+
+                 Correo:
+
+                <strong>
+
+                    {{usuario.correo}}
+
+                </strong>
+
+            </p>
+
+            <p>
+
+                 Rol:
+
+                <strong>
+
+                    {{usuario.rol}}
+
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ESTADISTICAS -->
+
+    <div class="row g-4 mb-5">
+
+        <!-- PRODUCTOS -->
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow rounded-4 text-center p-4 h-100">
+
+
+                <h2 class="fw-bold">
+
+                    {{totalProductos}}
+
+                </h2>
+
+                <p>
+
+                    Productos registrados
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- STOCK -->
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow rounded-4 text-center p-4 h-100">
+
+
+                <h2 class="fw-bold">
+
+                    {{totalStock}}
+
+                </h2>
+
+                <p>
+
+                    Stock total disponible
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- VALOR INVENTARIO -->
+
+        <div class="col-md-4">
+
+            <div class="card border-0 shadow rounded-4 text-center p-4 h-100">
+
+
+                <h2 class="fw-bold">
+
+                    {{totalValor | currency:'S/ '}}
+
+                </h2>
+
+                <p>
+
+                    Valor total inventario
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCTOS -->
+
+    <div class="card border-0 shadow rounded-4 mb-5">
+
+        <div class="card-body">
+
+            <h3 class="fw-bold mb-4">
+
+                Administración de productos
+
+            </h3>
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>Imagen</th>
+
+                            <th>Producto</th>
+
+                            <th>Categoría</th>
+
+                            <th>Precio</th>
+
+                            <th>Stock</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr *ngFor="let producto of productos">
+
+                            <!-- IMAGEN -->
+
+                            <td>
+
+                                <img
+                                    [src]="producto.imagen"
+                                    width="80"
+                                    height="80"
+                                    class="rounded shadow"
+                                    style="object-fit:cover;"
+                                >
+
+                            </td>
+
+                            <!-- NOMBRE -->
+
+                            <td>
+
+                                {{producto.nombre}}
+
+                            </td>
+
+                            <!-- CATEGORIA -->
+
+                            <td>
+
+                                {{producto.categoria}}
+
+                            </td>
+
+                            <!-- PRECIO -->
+
+                            <td>
+
+                                {{producto.precio | currency:'S/ '}}
+
+                            </td>
+
+                            <!-- STOCK -->
+
+                            <td>
+
+                                <span
+
+                                    class="badge"
+
+                                    [ngClass]="{
+
+                                      'bg-success': producto.stock > 5,
+
+                                      'bg-danger': producto.stock <= 5
+
+                                    }"
+
+                                >
+
+                                    {{producto.stock}}
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- USUARIOS -->
+
+    <div class="card border-0 shadow rounded-4 mb-5">
+
+        <div class="card-body">
+
+            <h3 class="fw-bold mb-4">
+
+                Usuarios registrados
+
+            </h3>
+
+            <p>
+
+                Total usuarios registrados:
+
+                <strong>
+
+                    {{usuarios.length}}
+
+                </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CERRAR SESION -->
+
+    <div class="text-center">
+
+        <button
+            class="btn btn-danger px-5"
+            (click)="cerrarSesion()"
+        >
+
+            Cerrar sesión
+
+        </button>
+
+    </div>
+
+</div>

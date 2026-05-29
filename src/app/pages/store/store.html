@@ -1,0 +1,99 @@
+<div class="container py-5">
+
+    <!-- TITULO -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-4 fw-bold">
+
+            Nuestras Tiendas
+
+        </h1>
+
+        <p class="lead text-muted">
+
+            Encuentra tu Cafe Aroma favorito 
+
+        </p>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="row g-4">
+
+        <!-- CARD -->
+
+        <div
+            class="col-md-6 col-lg-4"
+            *ngFor="let tienda of sucursales"
+        >
+
+            <div class="card h-100 border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <!-- IMAGEN -->
+
+                <img
+                    [src]="tienda.imagen"
+                    class="card-img-top"
+                    style="
+                        height:250px;
+                        object-fit:cover;
+                    "
+                >
+
+                <!-- BODY -->
+
+                <div class="card-body d-flex flex-column">
+
+                    <!-- NOMBRE -->
+
+                    <h3 class="fw-bold">
+
+                        {{tienda.nombre}}
+
+                    </h3>
+
+                    <!-- DIRECCION -->
+
+                    <p class="text-muted">
+
+                         {{tienda.direccion}}
+
+                    </p>
+
+                    <!-- HORARIO -->
+
+                    <p>
+
+                         {{tienda.horario}}
+
+                    </p>
+
+                    <!-- TELEFONO -->
+
+                    <p>
+
+                         {{tienda.telefono}}
+
+                    </p>
+
+                    <!-- BOTON -->
+
+                    <button
+                        class="btn btn-dark mt-auto"
+                    >
+
+                        Ver ubicación
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

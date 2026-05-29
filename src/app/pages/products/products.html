@@ -1,0 +1,318 @@
+<div class="container mt-5">
+
+    <!-- TITULO -->
+
+    <h1 class="text-center fw-bold mb-4">
+
+        Nuestros Productos 
+
+    </h1>
+
+    <!-- BUSCADOR -->
+
+    <div class="row mb-4">
+
+        <!-- INPUT -->
+
+        <div class="col-md-6 mb-3">
+
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="textoBuscar"
+                placeholder="Buscar producto..."
+            >
+
+        </div>
+
+        <!-- FILTRO -->
+
+        <div class="col-md-6">
+
+            <select
+                class="form-select"
+                [(ngModel)]="categoriaSeleccionada"
+            >
+
+                <option value="">
+
+                    Todas las categorías
+
+                </option>
+
+                <option value="Café">
+
+                    Café
+
+                </option>
+
+                <option value="Postres">
+
+                    Postres
+
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <!-- PRODUCTOS -->
+
+    <div class="row">
+
+        <div
+            class="col-md-4 mb-4"
+            *ngFor="let producto of productosFiltrados()"
+        >
+
+            <div class="card h-100 shadow border-0 rounded-4">
+
+                <!-- IMAGEN -->
+
+                <img
+                    [src]="producto.imagen"
+                    class="card-img-top"
+                    height="250"
+                    style="object-fit:cover;"
+                >
+
+                <!-- BODY -->
+
+                <div class="card-body">
+
+                    <!-- NOMBRE -->
+
+                    <h3
+                        class="fw-bold"
+                        [ngStyle]="{
+                          'font-size':'24px'
+                        }"
+                    >
+
+                        {{producto.nombre | uppercase}}
+
+                    </h3>
+
+                    <!-- CATEGORIA -->
+
+                    <p class="text-muted">
+
+                        Categoría:
+
+                        {{producto.categoria}}
+
+                    </p>
+
+                    <!-- PRECIO -->
+
+                    <h4 class="fw-bold text-dark">
+
+                        {{producto.precio | currency:'S/ '}}
+
+                    </h4>
+
+                    <!-- STOCK -->
+
+                    <p
+                        [ngClass]="{
+                          'text-success': producto.stock > 0,
+                          'text-danger': producto.stock <= 0
+                        }"
+                    >
+
+                        Stock:
+                        {{producto.stock}}
+
+                    </p>
+
+                    <!-- MENSAJE -->
+
+                    <p
+                        *ngIf="producto.stock <= 0"
+                        class="text-danger fw-bold"
+                    >
+
+                        Producto agotado
+
+                    </p>
+
+                    <!-- BOTON -->
+
+                    <button
+                        class="btn btn-dark w-100"
+                        (click)="comprar(producto)"
+                    >
+
+                        Comprar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CARRITO -->
+
+<div class="container mt-5">
+
+    <div class="card shadow border-0 rounded-4">
+
+        <div class="card-body">
+
+            <h2 class="fw-bold mb-4">
+
+                Carrito de compras 
+
+            </h2>
+
+            <!-- VACIO -->
+
+            <div *ngIf="carrito.carrito.length == 0">
+
+                <p class="text-muted">
+
+                    El carrito está vacío
+
+                </p>
+
+            </div>
+
+            <!-- ITEMS -->
+
+            <div
+                *ngFor="let item of carrito.carrito"
+                class="border-bottom py-3"
+            >
+
+                <div class="row align-items-center">
+
+                    <!-- NOMBRE -->
+
+                    <div class="col-md-3">
+
+                        <h5>
+
+                            {{item.nombre}}
+
+                        </h5>
+
+                    </div>
+
+                    <!-- CANTIDAD -->
+
+                    <div class="col-md-3 d-flex align-items-center gap-2">
+
+                        <button
+                            class="btn btn-dark btn-sm"
+                            (click)="carrito.disminuir(item)"
+                        >
+
+                            -
+
+                        </button>
+
+                        <span>
+
+                            {{item.cantidad}}
+
+                        </span>
+
+                        <button
+                            class="btn btn-dark btn-sm"
+                            (click)="carrito.aumentar(item)"
+                        >
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                    <!-- PRECIO -->
+
+                    <div class="col-md-3">
+
+                        <strong>
+
+                            {{item.precio * item.cantidad | currency:'S/ '}}
+
+                        </strong>
+
+                    </div>
+
+                    <!-- ELIMINAR -->
+
+                    <div class="col-md-3 text-end">
+
+                        <button
+                            class="btn btn-danger btn-sm"
+                            (click)="carrito.eliminar(item.id)"
+                        >
+
+                            Eliminar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RESUMEN -->
+
+            <div class="mt-4">
+
+                <hr>
+
+                <h4 class="d-flex justify-content-between">
+
+                    <span>Total:</span>
+
+                    <strong>
+
+                        {{carrito.total() | currency:'S/ '}}
+
+                    </strong>
+
+                </h4>
+
+            </div>
+
+            <!-- BOTONES -->
+
+            <div class="d-flex gap-3 mt-4">
+
+                <button
+                    class="btn btn-danger w-50"
+                    (click)="carrito.vaciar()"
+                >
+
+                    Vaciar carrito
+
+                </button>
+
+                <button
+                    class="btn btn-success w-50"
+                    (click)="finalizarCompra()"
+                >
+
+                    Finalizar compra
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
