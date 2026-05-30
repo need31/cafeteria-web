@@ -300,3 +300,7 @@ footer {
 .tarjeta-producto {
     overflow: hidden;
 }
+
+body {
+  padding-top: 70px;
+}

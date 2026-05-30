@@ -1,0 +1,14 @@
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #2b1a12;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .navbar-nav .nav-link {
+    color: white;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+}
