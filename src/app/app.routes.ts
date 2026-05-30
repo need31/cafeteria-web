@@ -44,7 +44,7 @@ export const routes: Routes = [
     },
 
     {
-        path: 'mi-Cuenta',
+        path: 'mi-cuenta',
         component: MyAccount
     },
 
