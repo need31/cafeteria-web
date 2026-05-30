@@ -49,6 +49,11 @@ export const routes: Routes = [
     },
 
     {
+    path: 'mi-Cuenta',
+    redirectTo: 'mi-cuenta',
+    pathMatch: 'full'
+},
+    {
         path: 'login',
         component: Login
     },
