@@ -1,19 +1,28 @@
-<div class="container text-center mt-5">
+<div class="error-container">
 
-  <h1 class="display-1 fw-bold">
-    404
-  </h1>
+  <div class="error-card">
 
-  <h2 class=" mb-4">
-    Página no encontrada
-  </h2>
+    <h1>404</h1>
 
-  <p class="lead mb-4"> 
-    La pagina que intentas visitar no existe.
-  </p>
+    <h2>Página no encontrada</h2>
 
-  <a routerLink="/">
-    <button class="btn btn-secondary">Volver al inicio</button>
-  </a>
+    <p>
+      La dirección solicitada no existe o ha sido movida.
+      Puede regresar al inicio y continuar navegando por el sistema.
+    </p>
+
+    <div class="acciones">
+
+      <a routerLink="/home" class="btn btn-dark">
+        Ir al Inicio
+      </a>
+
+      <a routerLink="/productos" class="btn btn-outline-dark">
+        Ver Productos
+      </a>
+
+    </div>
+
+  </div>
 
 </div>
