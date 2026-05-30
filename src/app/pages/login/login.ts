@@ -133,7 +133,7 @@ export class Login {
 
     // REDIRECCION
 
-    this.router.navigate(['/my-cuenta']);
+    this.router.navigate(['/mi-cuenta']);
 
   }
 
